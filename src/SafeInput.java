@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SafeInput {
 
     public static String getNonZeroLenString(Scanner pipe, String prompt) {
-        String retString = "";
+        String retString;
         do {
             System.out.println("\n" + prompt + ": ");
             retString = pipe.nextLine();

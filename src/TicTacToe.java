@@ -2,12 +2,11 @@ import java.util.Scanner;
 public class TicTacToe {
     private static final int ROWS = 3;
     private static final int COLS = 3;
-    private static String[][] board = new String[ROWS][COLS];
-    private static char currentPlayer = 'X';
+    private static final String[][] board = new String[ROWS][COLS];
 
     public static void main(String[] args) {
         clearBoard();
-        currentPlayer = 'X';
+        char currentPlayer = 'X';
         int moveCounter = 0;
         boolean gameWon = false;
         boolean gameTie = false;
