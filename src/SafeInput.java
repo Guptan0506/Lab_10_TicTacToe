@@ -45,13 +45,13 @@ public class SafeInput {
         return retDouble;
     }
 
-    public static int getRangedInt(Scanner pipe, String prompt, int low, int high) {
+    public static int getRangedInt(Scanner console, String prompt, int low, int high) {
         int retInt = 0;
         boolean isValid = false;
         do {
             System.out.println("\n" + prompt + "[" + low + " - " + high + "]: ");
-            if (pipe.hasNextInt()) {
-                retInt = pipe.nextInt();
+            if (console.hasNextInt()) {
+                retInt = console.nextInt();
                 if (retInt >= low && retInt <= high) {
                     isValid = true;
                 } else {
@@ -59,9 +59,9 @@ public class SafeInput {
                 }
             } else {
                 System.out.println("Invalid input. Please enter an integer.");
-                pipe.next();
+                console.next();
             }
-            pipe.nextLine();
+            console.nextLine();
         } while (!isValid);
         return retInt;
     }
@@ -87,13 +87,13 @@ public class SafeInput {
         return retDouble;
     }
 
-    public static boolean getYNConfirm(Scanner pipe, String prompt) {
+    public static boolean getYNConfirm(Scanner console, String prompt) {
         String response;
         boolean isValid = false;
         boolean retVal = false;
         do {
             System.out.print("\n" + prompt + " [Y/N]: ");
-            response = pipe.nextLine().trim().toLowerCase();
+            response = console.nextLine().trim().toLowerCase();
             if (response.equals("y")) {
                 retVal = true;
                 isValid = true;
