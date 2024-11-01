@@ -33,34 +33,34 @@ public class TicTacToe {
 
             if (gameWon) {
                 System.out.println(currentPlayer + " wins!");
-                // Prompt to play again
-            } else if (gameTie) {
+            }
+            else if (gameTie) {
                 System.out.println("It's a tie!");
-                // Prompt to play again
-            } else {
+            }
+            else {
                 currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
             }
         }
     }
 
     private static void clearBoard() {
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
-                board[i][j] = " ";
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++) {
+                board[row][col] = " ";
             }
         }
     }
 
     private static void display() {
-        System.out.println("  1 2 3");
-        for (int i = 0; i < ROWS; i++) {
-            System.out.print((i + 1) + " ");
-            for (int j = 0; j < COLS; j++) {
-                System.out.print(board[i][j]);
-                if (j < COLS - 1) System.out.print("|");
+        System.out.println("  1   2  3");
+        for (int row = 0; row < ROWS; row++) {
+            System.out.print((row + 1) + " ");
+            for (int col = 0; col < COLS; col++) {
+                System.out.print(board[row][col]);
+                if (col < COLS - 1) System.out.print(" | ");
             }
             System.out.println();
-            if (i < ROWS - 1) System.out.println("  -----");
+            if (row < ROWS - 1) System.out.println("  ---------");
         }
     }
 
@@ -100,9 +100,9 @@ public class TicTacToe {
     }
 
     private static boolean isTie() {
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLS; j++) {
-                if (board[i][j].equals(" ")) {
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++) {
+                if (board[row][col].equals(" ")) {
                     return false;
                 }
             }
